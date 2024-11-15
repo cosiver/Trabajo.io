@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario Estilo TikTok</title>
+  <title>Formulario de Tarjeta de Crédito</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #000000, #ff0050);
+      background: linear-gradient(135deg, #0d47a1, #1e88e5);
       color: #fff;
       display: flex;
       justify-content: center;
@@ -17,7 +17,7 @@
     }
 
     .form-container {
-      background: #1c1c1c;
+      background: #ffffff10;
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -28,8 +28,8 @@
 
     h1 {
       font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #ff0050;
+      margin-bottom: 1rem;
+      color: #ffeb3b;
     }
 
     .input-group {
@@ -41,7 +41,7 @@
       font-size: 0.9rem;
       margin-bottom: 0.5rem;
       display: block;
-      color: #999;
+      color: #ccc;
     }
 
     input {
@@ -56,7 +56,7 @@
 
     input:focus {
       outline: none;
-      box-shadow: 0 0 5px #ff0050;
+      box-shadow: 0 0 5px #ffeb3b;
     }
 
     .btn {
@@ -65,7 +65,7 @@
       padding: 0.8rem;
       font-size: 1rem;
       color: #fff;
-      background: #ff0050;
+      background: #ff5722;
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -73,7 +73,7 @@
     }
 
     .btn:hover {
-      background: #ff3366;
+      background: #ff7043;
     }
 
     @media (max-width: 480px) {
@@ -94,21 +94,25 @@
 </head>
 <body>
   <div class="form-container">
-    <h1>Registro</h1>
+    <h1>Pago con Tarjeta</h1>
     <form>
       <div class="input-group">
-        <label for="username">Nombre de usuario</label>
-        <input type="text" id="username" placeholder="Ingrese su nombre de usuario" required>
+        <label for="card-number">Número de Tarjeta</label>
+        <input type="text" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX" pattern="\d{4}-\d{4}-\d{4}-\d{4}" required>
       </div>
       <div class="input-group">
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" placeholder="Ingrese su correo" required>
+        <label for="card-name">Nombre del Titular</label>
+        <input type="text" id="card-name" placeholder="Nombre como aparece en la tarjeta" required>
       </div>
       <div class="input-group">
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="Ingrese su contraseña" required>
+        <label for="expiry-date">Fecha de Expiración</label>
+        <input type="month" id="expiry-date" required>
       </div>
-      <button type="submit" class="btn">Registrarse</button>
+      <div class="input-group">
+        <label for="cvv">CVV</label>
+        <input type="password" id="cvv" placeholder="XXX" pattern="\d{3}" maxlength="3" required>
+      </div>
+      <button type="submit" class="btn">Procesar Pago</button>
     </form>
   </div>
 </body>
